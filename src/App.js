@@ -1,11 +1,12 @@
+import Header from './components/Header';
+
 import './App.css';
 
 function App() {
+  document.querySelector("html").setAttribute("data-theme", "night")
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <Header />
     </div>
   );
 }
