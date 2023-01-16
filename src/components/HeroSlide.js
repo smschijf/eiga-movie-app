@@ -14,9 +14,9 @@ const HeroSlide = () => {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const res = await tmdb.get("movie/popular");
+        const res = await tmdb.get("trending/all/day");
         setMovies(res.data.results.slice(0, 10));
-        console.log(res.data.results);
+        // console.log(res.data.results);
       } catch {
         console.log("error");
       }
@@ -34,14 +34,16 @@ const HeroSlide = () => {
     >
       {movies.map((item, i) => {
         return (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} className="hero-slide">
+            <a href={`/${item.id}`}>
             <img
               src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
-              alt={item.original_title}
+              alt={item.original_title ? item.original_title : item.original_name}
             />
             <span className="absolute top-3/4 left-16 z-10 text-xl font-bold">
-              {item.original_title}
+              {item.original_title ? item.original_title : item.original_name}
             </span>
+            </a>
           </SwiperSlide>
         );
       })}
