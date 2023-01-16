@@ -1,4 +1,4 @@
-# Eiga movie app
+# Film Buddy
 
 ## Future Features
 
