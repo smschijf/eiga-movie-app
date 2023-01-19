@@ -1,6 +1,8 @@
 main {
   background-image: url("./assets/img/home-background.png");
   background-attachment: fixed;
+  background-size: cover;
+  min-height: 100%;
 }
 
 .swiper {

@@ -34,8 +34,10 @@ const HeroSlide = () => {
     >
       {movies.map((item, i) => {
         return (
-          <SwiperSlide key={i} className="hero-slide">
-            <a href={`/${item.id}`}>
+          // <a href={`/${item.id}`}>
+          <SwiperSlide key={i} className="hero-slide" onClick={() => {
+            window.location.href=`/${item.id}`
+          }}>
             <img
               src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
               alt={item.original_title ? item.original_title : item.original_name}
@@ -43,8 +45,8 @@ const HeroSlide = () => {
             <span className="absolute top-3/4 left-16 z-10 text-xl font-bold">
               {item.original_title ? item.original_title : item.original_name}
             </span>
-            </a>
           </SwiperSlide>
+          // </a>
         );
       })}
     </Swiper>
