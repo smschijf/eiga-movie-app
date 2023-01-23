@@ -25,12 +25,25 @@ const Search = () => {
       var searchResults = document.getElementsByClassName("searchResults")[0];
       res.forEach((item) => {
         let movieCard = document.createElement("div");
-        movieCard.classList.add("test")
-        movieCard.innerHTML = (
-          `<div className="hello">
-            ${item.original_title ? item.original_title : item.original_name}
-          </div>`
-        );
+        movieCard.classList.add("test", "relative");
+        movieCard.innerHTML = `
+        <img src="https://image.tmdb.org/t/p/original/${
+          item.poster_path
+        }" alt=${
+          item.original_title ? item.original_title : item.original_name
+        } class="object-cover rounded-md" />
+        <a href=/${
+          item.id
+        } class="overlay absolute inset-0 h-full w-full opacity-0 bg-black hover:opacity-80 transition-opacity p-3">
+        <div class="flex justify-between">
+        <span class="text-lg font-semibold">
+          ${item.original_title ? item.original_title : item.original_name}
+        </span>
+        <span class="text-lg font-semibold">
+          ${item.vote_average}
+        </span>
+        </div>
+          </a>`;
         searchResults.appendChild(movieCard);
       });
       console.log(searchQuery);
@@ -52,11 +65,7 @@ const Search = () => {
           className="text-black border-2 border-gray-300 bg-white h-10 px-5 rounded-lg text-sm w-96"
         />
       </form>
-      <div className="searchResults grid grid-cols-6 grid-rows-3 gap-5">
-        {/* {result.map(item => {
-          <span>{item.id}</span>
-        })} */}
-      </div>
+      <div className="searchResults grid grid-cols-6 grid-rows-3 gap-5 min-h-screen mt-8"></div>
     </>
   );
 };

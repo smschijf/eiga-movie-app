@@ -41,6 +41,7 @@ const MovieRow = (props) => {
             <img
               src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
               alt={item.original_title ? item.original_title : item.original_name}
+              className="rounded-md"
             />
             </a>
           </SwiperSlide>
