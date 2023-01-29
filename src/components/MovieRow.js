@@ -26,28 +26,44 @@ const MovieRow = (props) => {
 
   return (
     <>
-    <h2 className="text-md font-bold py-6">{props.title}</h2>
-    <Swiper
-      modules={[Navigation]}
-      navigation
-      loop
-      slidesPerView={5}
-      spaceBetween={30}
-    >
-      {movies.map((item, i) => {
-        return (
-          <SwiperSlide key={i} className="movie-row">
-            <a href={`/${item.id}`}>
-            <img
-              src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
-              alt={item.original_title ? item.original_title : item.original_name}
-              className="rounded-md"
-            />
-            </a>
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+      <h2 className="text-md font-bold py-6">{props.title}</h2>
+      <Swiper
+        modules={[Navigation]}
+        navigation
+        loop
+        slidesPerView={5}
+        spaceBetween={30}
+      >
+        {movies.map((item, i) => {
+          return (
+            <SwiperSlide key={i} className="movie-row">
+              <a href={`/${item.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
+                  alt={
+                    item.original_title
+                      ? item.original_title
+                      : item.original_name
+                  }
+                  className="rounded-md relative"
+                />
+                <div className="overlay absolute inset-0 h-full w-full opacity-0 bg-black hover:opacity-80 transition-opacity p-3">
+                  <div className="flex justify-between">
+                    <span className="text-lg font-semibold">
+                      {item.original_title
+                        ? item.original_title
+                        : item.original_name}
+                    </span>
+                    <span className="text-lg font-semibold">
+                      {item.vote_average}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </>
   );
 };
