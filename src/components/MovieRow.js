@@ -35,6 +35,7 @@ const MovieRow = (props) => {
         spaceBetween={30}
       >
         {movies.map((item, i) => {
+          let movieScore = (item.vote_average).toString().slice(0,3);
           return (
             <SwiperSlide key={i} className="movie-row">
               <a href={`/${item.id}`}>
@@ -55,7 +56,7 @@ const MovieRow = (props) => {
                         : item.original_name}
                     </span>
                     <span className="text-lg font-semibold">
-                      {item.vote_average}
+                      {movieScore}
                     </span>
                   </div>
                 </div>
