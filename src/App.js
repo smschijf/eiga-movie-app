@@ -17,12 +17,12 @@ function App() {
       <main className="text-white pt-16 px-9">
         <Router>
           <Routes>
-            <Route path="/movie-app/search" element={<Search />} />
-            <Route path="/movie-app/watchlist" element={<Watchlist />} />
-            <Route path="/movie-app/movies" element={<Movies />} />
-            <Route path="/movie-app/tv" element={<Tv />} />
-            <Route path="/movie-app/:id" element={<Detail />} />
-            <Route path="/movie-app" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/tv" element={<Tv />} />
+            <Route path="/:id" element={<Detail />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </Router>
       </main>

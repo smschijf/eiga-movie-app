@@ -7,27 +7,27 @@ import watchlist from "../assets/img/watchlist-icon.svg";
 const headerNav = [
   {
     title: "Home",
-    path: "/movie-app",
+    path: "/",
     iconPath: { home }.home,
   },
   {
     title: "Search",
-    path: "/movie-app/search",
+    path: "/search",
     iconPath: { search }.search,
   },
   {
     title: "Watchlist",
-    path: "/movie-app/watchlist",
+    path: "/watchlist",
     iconPath: { watchlist }.watchlist,
   },
   {
     title: "Movies",
-    path: "/movie-app/movies",
+    path: "/movies",
     iconPath: { movie }.movie,
   },
   {
     title: "TV Series",
-    path: "/movie-app/tv",
+    path: "/tv",
     iconPath: { tv }.tv,
   },
 ];
@@ -35,7 +35,7 @@ const headerNav = [
 const Header = () => {
   return (
       <nav className="w-full fixed h-16 bg-gray-900 flex justify-between items-center px-9 z-20">
-        <a href="/movie-app" className="text-xl text-white font-bold">
+        <a href="/" className="text-xl text-white font-bold">
           film buddy
         </a>
         <ul className="items-center flex flex-row h-full justify-end relative ml-6 mr-auto">
