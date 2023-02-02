@@ -5,10 +5,11 @@ import WatchListButton from "../components/WatchListButton";
 const Watchlist = () => {
   const [watchList, setWatchList] = useState([]);
 
-  const DeleteWatchList = (movie) => {
+  const DeleteWatchList = (e, movie) => {
     const newWatchList = [...watchList, movie];
     setWatchList(newWatchList);
     localStorage.removeItem("film-buddy-favourites");
+    // e.stopPropagation();
   };
 
   useEffect(() => {
@@ -28,7 +29,7 @@ const Watchlist = () => {
       </h1>
       <div className="grid grid-cols-6 grid-rows-3 gap-5 min-h-screen mt-8">
         {watchList.map((item) => {
-          let movieScore = item.vote_average.toString().slice(0, 3);
+          let movieScore = (item.vote_average).toString().slice(0, 3);
           return (
             <div className="relative" key={item.id}>
               <img

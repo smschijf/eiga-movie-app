@@ -7,9 +7,10 @@ const WatchListButton = (props) => {
   return (
     <>
       <button
-        onClick={() => {
+        onClick={(e) => {
           props.handleWatchListClick(props.data);
           document.getElementById("confirmation-modal").style.display = "block";
+          e.stopPropagation();
         }}
         className="py-2 px-4 bg-transparent text-white font-semibold border border-white rounded hover:bg-white hover:text-black hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
         id="open-modal-btn"
@@ -32,9 +33,9 @@ const WatchListButton = (props) => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M5 13l4 4L19 7"
                 ></path>
               </svg>
