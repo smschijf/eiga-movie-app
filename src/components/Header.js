@@ -35,7 +35,7 @@ const headerNav = [
 const Header = () => {
   return (
       <nav className="w-full fixed h-16 bg-gray-900 flex justify-between items-center px-9 z-20">
-        <a href="/" className="text-xl text-white font-bold">
+        <a href="/movie-app" className="text-xl text-white font-bold">
           film buddy
         </a>
         <ul className="items-center flex flex-row h-full justify-end relative ml-6 mr-auto">
